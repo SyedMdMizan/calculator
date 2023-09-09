@@ -1,110 +1,112 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Phudu:wght@500&display=swap");
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  font-family: "Lato", sans-serif;
-  font-family: "Phudu", cursive;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
-body {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
-  height: 100vh;
-  /* justify-content: space-between; */
-  background-image: linear-gradient(135deg, rgb(0, 0, 225), rgb(217, 0, 255));
-}
-.footer{
-    font-size: 20px !important;
-    padding-top: 10px;
-    color: #ffffff;
+.head, .foot{
     text-align: center;
-}
-.footer a{
-    text-decoration: none;
     color: #ffffff;
 }
-.footer a:visited{
+.head{
+    font-size: 2.5em;
+    padding-bottom: 20px;
+    font-weight: 900;
+}
+.foot{
+    font-size: 1.5em;
+    padding-top: 50px;
+}
+.foot a{
+    text-decoration: underline;
     color: #ffffff;
-    text-decoration: none;
 }
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
-  border: 1px solid #ffffff;
+body{
+    height: 100vh;
+    font-size: 1em;
+    background-image: linear-gradient(135deg,rgb(0, 0, 225), rgb(217, 0, 255));
 }
-.gridcontainer {
-  display: grid;
-  grid-template-columns: auto auto auto AUTO;
-  gap: 10px;
+#calculator{
+    width: 332px;
+    padding: 20px;
+    margin: auto;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 0px 25px 40px black;
+    background-image: linear-gradient(315deg, rgb(0, 0, 0), rgb(57, 57, 58));
+    color: #ffffff;
 }
-.head {
-    font-weight: 700;
-  text-align: center;
-  font-size: 50px;
-  color: #ffffff;
+#numpad .item{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: 140px;
+    border-radius: 50px;
 }
-.bg-black {
-  background-image: linear-gradient(315deg, rgb(0, 0, 0), rgb(57, 57, 58));
-  width: 320px;
-  border-radius: 10px;
-  box-shadow: 0px 25px 40px;
+#numpad{
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 5px;
+    width: 300px;
 }
-.button {
-  border-radius: 50%;
-  margin: 3px;
-  width: 50px;
-  height: 50px;
-  border: none;
-  box-shadow: 0px 5px 10px grey;
-  cursor: pointer;
-  font-size: 25px;
-  background: transparent;
-  color: #ffffff;
+#display{
+    display: grid;
+    border: 1px solid #B5B1B6;
+    border-radius: 5px;
+    background-color: rgba(0, 187, 255, 0.1);
+    height: 90px;
+    
 }
-.input {
-  padding: 10px 5px;
-  width: 250px;
-  border: none;
-  color: #ffffff;
-  font-size: 30px;
+#display input{
+    display: block;
   text-align: right;
-  background: transparent;
-}
-.input::placeholder {
-  color: #ffffff;
-}
-.equalbtn {
-  background-color: orange;
-}
-.operator {
-  color: rgb(46, 222, 26);
-}
-.button:hover {
-  background-color: #ffffff;
-  color: black;
-}
-.operator:hover {
-  background-color: rgb(46, 222, 26);
-  color: black;
-}
-.equalbtn:hover {
-  background-color: rgb(255, 150, 0);
-  color: black;
-}
-.inputvalue {
-  text-align: right;
-  width: 250px;
-  padding: 0 5px;
+  padding: 8px 7px;
+  background: none;
+  font-size: 0.9rem;
+  color: #ffffff84;
   border: none;
-  background: transparent;
-  color: #ffffff;
-  font-size: 15px;
 }
-.input:focus {
-  outline: 0;
+#display output{
+    display: block;
+    text-align: right;
+    padding: 0px 5px;
+    background: none;
+    font-weight: bold;
+    font-size: 2rem;
+    overflow: auto;
 }
+#history, #result{
+    text-align: right;
+}
+#numpad button{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: none;
+    color: #ffffff;
+    background: transparent;
+    box-shadow: 0px 2px 5px grey;
+}
+#numpad button:hover{
+    color: black;
+    background-color: #ffffff;
+}
+#numpad .equalbtn{
+    background-color: orange;
+    color :#ffffff !important;
+}
+#numpad .equalbtn:hover{
+    background-color: rgb(195, 127, 0) !important;
+}
+#numpad .operator:hover{
+    background-color: green;
+    color: #ffffff;
+}
+#numpad .operator{
+    color: green;
+}
+
+
