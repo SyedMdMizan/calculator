@@ -97,16 +97,16 @@ const Calculator = class Calculator {
         let partialSol = self.performOperation(
           ...currExpr.slice(leftOpIdx, rightOpIdx + 1)
         );
-        if ([null, undefined].includes(partialSol)) partialSol = '';
+        if ([null, undefined].includes(partialSol)) partialSol = "";
         currExpr.splice(leftOpIdx, 3, partialSol.toString());
         return simplifyExpression(currExpr, operator);
       }
     };
-    let result = ['*', '/', '+', '-'].reduce(
+    let result = ["*", "/", "+", "-"].reduce(
       simplifyExpression,
       this.getAllInputValues()
     );
-    this.addNewInput('=', 'equals');
+    this.addNewInput("=", "equals");
     this.updateOutputDisplay(result.toString());
   }
 
@@ -138,11 +138,15 @@ const Calculator = class Calculator {
   updateInputDisplay() {
     let val = "",
       pstr = (inp) => {
-        if(inp.startsWith('-')) inp = '(' + inp + ')';
+        if (inp.startsWith("-")) inp = "(" + inp + ")";
         return inp;
       };
     for (var i = 0; i < this.inHist.length; i++) {
-      val += " " + (this.inHist[i].type === 'number' ? pstr(this.inHist[i].value.toString()) : this.inHist[i].value.toString());
+      val +=
+        " " +
+        (this.inHist[i].type === "number"
+          ? pstr(this.inHist[i].value.toString())
+          : this.inHist[i].value.toString());
     }
     this.inp.value = val.substring(1);
   }
@@ -221,4 +225,3 @@ numberButtons.forEach((button) => {
     calculator.insertNumber(event.target.dataset.number);
   });
 });
-
